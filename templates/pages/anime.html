@@ -1,0 +1,925 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/img/Screenshot 2024-12-05 163202.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/anime.css' %}"/>
+    <title>Cima Hub</title>
+  </head>
+</head>
+
+<body>
+    <header id="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>Cima <span>Club</span></h1>
+            </div>
+            <nav>
+                <input type="text" placeholder="ابحث عن اسم فيلم أو مسلسل...">
+            <ul class="nav-list">
+              <li><a href="{% url 'options' %}" class="activ">الرئيسيه</a></li>
+              <li class="nav-option"><a href="{% url 'movies' %}">الأفلام <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                <ul>
+                  <li><a href="#action">أكشن</a></li>
+                  <li><a href="#comedy">كوميدي</a></li>
+                  <li><a href="#romantic">رومانسى</a></li>
+                  <li><a href="#horror">رعب</a></li>
+                  <li><a href="#best">افضل تجميعة</a></li>
+                </ul>
+              </li>
+                <li class="nav-option"><a href="{% url 'series' %}">المسلسلات <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                  <ul>
+                    <li><a href="#fantasy">فانتازيا</a></li>
+                    <li><a href="#crime">جريمة</a></li>
+                    <li><a href="#comedy">كوميدي</a></li>
+                  </ul>
+                </li>
+                <li class="nav-option"><a href="{% url 'anime' %}">انمي & كرتون <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                  <ul>
+                    <li><a href="#action">اكشن</a></li>
+                    <li><a href="#advent">مغامرة</a></li>
+                    <li><a href="#comedy">كوميديا</a></li>
+                  </ul>
+                </li>
+            </ul>
+            </nav>
+            <button class="signup-btn user-greeting"></button>
+        </div>
+        </header>
+
+    <main>
+        <div class="slider-container" >
+            <h3 class="sec-header">الاكثر مشاهده</h3><!--Categorey  name -->
+            <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="slider">
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt2098220/"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/hunterX.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 10</span><!--movie  rating -->
+                            <h1>hunterXhunter</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt2098220/"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt2560140/"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Attack on Titan.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 10</span><!--movie  rating -->
+                            <h1>Attack on Titan</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt2560140/"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt1305826/?ref_=nv_sr_srsg_0_tt_7_nm_0_in_1_q_adaventur"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Adventure Tim.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.1</span><!--movie  rating -->
+                            <h1>Adventure Time</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt1305826/?ref_=nv_sr_srsg_0_tt_7_nm_0_in_1_q_adaventur"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt0103359/?ref_=nv_sr_srsg_11_tt_7_nm_0_in_0_q_batman%2520"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Batman.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9</span><!--movie  rating -->
+                            <h1>Batman</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt0103359/?ref_=nv_sr_srsg_11_tt_7_nm_0_in_0_q_batman%2520"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt1622696/?ref_=nv_sr_srsg_6_tt_8_nm_0_in_0_q_ben10"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Ben 10.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.8</span><!--movie  rating -->
+                            <h1>Ben 10</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt1622696/?ref_=nv_sr_srsg_6_tt_8_nm_0_in_0_q_ben10"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt0877057/?ref_=nv_sr_srsg_3_tt_8_nm_0_in_0_q_death"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Death Note.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.2</span><!--movie  rating -->
+                            <h1>Death note</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt0877057/?ref_=nv_sr_srsg_3_tt_8_nm_0_in_0_q_death"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt0214341/?ref_=nv_sr_srsg_3_tt_8_nm_0_in_0_q_dragone%2520ball"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/dragon ball.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.5</span><!--movie  rating -->
+                            <h1>dragon ball</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt0214341/?ref_=nv_sr_srsg_3_tt_8_nm_0_in_0_q_dragone%2520ball"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt1724587/?ref_=nv_sr_srsg_5_tt_7_nm_1_in_0_q_green%2520lan"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Green Lantern.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.1</span><!--movie  rating -->
+                            <h1>Green Lantern</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt1724587/?ref_=nv_sr_srsg_5_tt_7_nm_1_in_0_q_green%2520lan"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt0988824/?ref_=nv_sr_srsg_3_tt_7_nm_1_in_0_q_nar"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Naruto.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.4</span><!--movie  rating -->
+                            <h1>Naruto: Shippuden</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt0988824/?ref_=nv_sr_srsg_3_tt_7_nm_1_in_0_q_nar"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt12343534/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Jujutsu%2520Kaisen"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Jujutsu Kaisen.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.4</span><!--movie  rating -->
+                            <h1>Jujutsu Kaisen</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt12343534/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Jujutsu%2520Kaisen"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt0112175/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Spider-Man%2520ani"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Spider-Man.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.3</span><!--movie  rating -->
+                            <h1>Spider-Man</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt0112175/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Spider-Man%2520ani"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt0343314/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_teen%2520ti"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Teen Titans.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 7.9</span><!--movie  rating -->
+                            <h1>Teen Titans</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt0343314/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_teen%2520ti"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt1695360/"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Avatar.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.9</span><!--movie  rating -->
+                            <h1>The Legend of Korra</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt1695360/"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.imdb.com/title/tt0388629/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_one%2520p"><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/One Piece.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.3</span><!--movie  rating -->
+                            <h1>One Piece</h1><!--movie  name -->
+                            <a href="https://www.imdb.com/title/tt0388629/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_one%2520p"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+
+
+
+            </div>
+            <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+
+
+        </div>
+        <div class="slider-container" id="action">
+            <h3 class="sec-header">اكشن</h3><!--Categorey  name -->
+            <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="slider">
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Attack on Titan.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.9</span><!--movie  rating -->
+                            <h1>Attack on Titan</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/The Incredibles.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.1</span><!--movie  rating -->
+                            <h1>The Incredibles</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Death Note.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.2</span><!--movie  rating -->
+                            <h1>Death Note</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Spider-Man.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.4</span><!--movie  rating -->
+                            <h1>Spider-Man</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/The Dragon.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 7.6</span><!--movie  rating -->
+                            <h1>The Dragon</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/ONE PUNCH MAN.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.6</span><!--movie  rating -->
+                            <h1>One punch man</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Justice League Unlimited.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.1</span><!--movie  rating -->
+                            <h1>Justice League Unlimited</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Vinland Saga.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 7.9</span><!--movie  rating -->
+                            <h1>Vinland Saga</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Trigun.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 7.1</span><!--movie  rating -->
+                            <h1>Trigun</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Rurouni Kenshin.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 6.9</span><!--movie  rating -->
+                            <h1>Rurouni Kenshin</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Yu Yu Hakusho.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 7.2</span><!--movie  rating -->
+                            <h1>Yu Yu Hakusho</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Bleach.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 6.9</span><!--movie  rating -->
+                            <h1>Bleach</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Demon Slayer.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 6.7</span><!--movie  rating -->
+                            <h1>Demon Slayer</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Berserk.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.2</span><!--movie  rating -->
+                            <h1>Berserk</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+
+
+
+            </div>
+            <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+
+
+        </div>
+        <div class="slider-container" id="advent">
+            <h3 class="sec-header">مغامرة</h3><!--Categorey  name -->
+            <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="slider">
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Adventure Tim.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.7</span><!--movie  rating -->
+                            <h1>Adventure Time</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/The Owl House.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 6.9</span><!--movie  rating -->
+                            <h1>The Owl House</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Rick and Morty.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.7</span><!--movie  rating -->
+                            <h1>Rick and Morty</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Star Wars.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.1</span><!--movie  rating -->
+                            <h1>Star Wars</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/miraculous.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.9</span><!--movie  rating -->
+                            <h1>Miraculous</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Ben 10.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 7.9</span><!--movie  rating -->
+                            <h1>Ben 10</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/conan.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.9</span><!--movie  rating -->
+                            <h1>conan</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Futurama.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 6.9</span><!--movie  rating -->
+                            <h1>Futurama</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Erased.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 7.9</span><!--movie  rating -->
+                            <h1>Erased</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Avatar.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.9</span><!--movie  rating -->
+                            <h1></h1><!--movie  name -->
+                            <a href="Avatar"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Teen Titans.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.9</span><!--movie  rating -->
+                            <h1>Teen Titans</h1><!--movie  name -->
+                            <a href="8.3"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Fate.Zero.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 6.9</span><!--movie  rating -->
+                            <h1>Fate Zero</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/My Hero Academia.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.2</span><!--movie  rating -->
+                            <h1>My Hero Academia</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Naruto.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.7</span><!--movie  rating -->
+                            <h1>Naruto</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+
+
+
+            </div>
+            <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+
+
+        </div>
+        <div class="slider-container" id="comedy">
+            <h3 class="sec-header">كوميديا</h3><!--Categorey  name -->
+            <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="slider">
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Maggie Simpson in The Longest Daycare.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.9</span><!--movie  rating -->
+                            <h1>Maggie Simpson</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/b.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.8</span><!--movie  rating -->
+                            <h1>The bare bears</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Gumball.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9</span><!--movie  rating -->
+                            <h1>Gumball</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/7.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.9</span><!--movie  rating -->
+                            <h1>Looney tunes</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Phineas Ferb.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.1</span><!--movie  rating -->
+                            <h1>Phineas Ferb</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/SpongeBob SquarePants.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.4</span><!--movie  rating -->
+                            <h1>SpongeBob SquarePants</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/The Powerpuff Girls.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 7.9</span><!--movie  rating -->
+                            <h1>The Powerpuff Girls</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/o.jpg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.9</span><!--movie  rating -->
+                            <h1>fairly odd funnies</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/mr bean.jpeg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9</span><!--movie  rating -->
+                            <h1>Mr bean</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/anglo.jpeg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.1</span><!--movie  rating -->
+                            <h1>Anglo rules</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/danny phantom.jpeg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.7</span><!--movie  rating -->
+                            <h1></h1><!--movie  name -->
+                            <a href="Danny phantom"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/Chalk Zone.jpeg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.9</span><!--movie  rating -->
+                            <h1>Chalk Zone</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/coraje.jpeg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 8.7</span><!--movie  rating -->
+                            <h1></h1><!--movie  name -->
+                            <a href="coraje"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><!--movie link from www.wecima.com -->
+
+                        <div class="img-part">
+                            <img src="{% static 'img/download.jpeg' %}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="text-file">
+                            <span> &#11088 9.5</span><!--movie  rating -->
+                            <h1>Jimmy Neutron</h1><!--movie  name -->
+                            <a href=""><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                        </div>
+                    </a>
+                </div>
+
+
+
+            </div>
+            <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+
+
+        </div>
+
+
+    </main>
+    <footer></footer>
+
+    <script src="{% static 'js/anime.js' %}"></script>
+    <script>
+  window.onload = function () {
+      const signupBtn = document.querySelector('.signup-btn');
+      const userName = localStorage.getItem('userName'); 
+
+      if (userName) {
+          signupBtn.textContent = `Hello, ${userName}`;
+          signupBtn.style.pointerEvents = 'none'; 
+      } else {
+          signupBtn.textContent = 'التسجيل';
+          signupBtn.addEventListener('click', function () {
+                    window.location.href = '{% url "loginform" %}'; 
+                });
+      }
+  };
+  window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
+
+    </script>
+</body>
+
+</html>

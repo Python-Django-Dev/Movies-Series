@@ -1,0 +1,38 @@
+{%load static%}
+<header id="navbar">
+    <div class="container">
+        <div class="logo">
+            <h1>Cima <span>Club</span></h1>
+        </div>
+        <nav>
+            <input type="text" placeholder="ابحث عن اسم فيلم أو مسلسل...">
+        <ul class="nav-list">
+          <li><a href="{% url 'options' %}" class="activ">الرئيسيه</a></li>
+          <li class="nav-option"><a href="#">الأفلام <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul>
+              <li><a href="#action">أكشن</a></li>
+              <li><a href="#comedy">كوميدي</a></li>
+              <li><a href="#romantic">رومانسى</a></li>
+              <li><a href="#horror">رعب</a></li>
+              <li><a href="#best">افضل تجميعة</a></li>
+            </ul>
+          </li>
+            <li class="nav-option"><a href="{% url 'series' %}">المسلسلات <i class="fas fa-chevron-down dropdown-icon"></i></a>
+              <ul>
+                <li><a href="#fantasy">فانتازيا</a></li>
+                <li><a href="#crime">جريمة</a></li>
+                <li><a href="#comedy">كوميدي</a></li>
+              </ul>
+            </li>
+            <li class="nav-option"><a href="{% url 'anime' %}">انمي & كرتون <i class="fas fa-chevron-down dropdown-icon"></i></a>
+              <ul>
+                <li><a href="#action">اكشن</a></li>
+                <li><a href="#advent">مغامرة</a></li>
+                <li><a href="#comedy">كوميديا</a></li>
+              </ul>
+            </li>
+        </ul>
+        </nav>
+        <button class="signup-btn user-greeting"></button>
+    </div>
+    </header>

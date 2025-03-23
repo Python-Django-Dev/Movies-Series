@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --main:#d58a00;
+    --secondary:rgb(18, 18, 18);
+}
+
+/* =================================================== */
+body {
+    font-family: "Tajawal", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #121212;
+    opacity: 0; /* الصفحة تبدأ مخفية */
+    transform: scale(1.1); /* الصفحة تبدأ بحجم أكبر قليلاً */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* تأثير سلس */
+}
+
+body.loaded {
+    opacity: 1;
+    transform: scale(1); /* العودة للحجم الطبيعي */
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000000;
+}
+
+.container {
+    height: 100%;
+    overflow: hidden;
+    width: 33.33%;
+}
+
+main  a{
+    height: 100%;
+    width: 100%;
+    background-color:var(--main);
+    /* border-radius: 15px; */
+    transition: all ease-in-out 200ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: var(--main);
+    font-size: larger;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+}
+
+
+main a::after{
+    content: 'أفلام';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    width: 100%;
+    height: 100%;
+    background-color: #00000089;
+    z-index: 8;
+    font-family: "Tajawal", sans-serif;
+    font-weight: bold;
+    overflow: hidden;
+}
+main a:hover{
+    transform: scale(1.05);
+}
+main .Movies{
+    background-image: url(../img/Movie-Section.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+main .Series{
+    background-image: url(../img/download.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.Series::after{
+    content: 'مسلسلات';
+}
+.Anime{
+    background-image: url(../img/Anime.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.Anime::after{
+    content: 'أنمي';
+}
+@media(max-width:857px){
+    main{
+
+        flex-direction: column;
+    }
+    main div{
+      height: 31%;
+      width: 95%;   
+      
+  }
+}

@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% block content %}
+<main> 
+    <div class="slider-container" >
+        <h3 class="sec-header">الأكثر مشاهدة</h3><!--Categorey  name --> 
+        <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="slider">
+            {% for movie in movie|slice:'0:14' %}
+            {% if movie.active %}
+            <div class="card">
+                <a href="{{movie.movie_link}}"><!--movie link from www.wecima.com -->
+
+                    <div class="img-part">
+                        <img src="{{movie.image.url}}" width="100%" height="100%" alt="">
+                    </div>
+                    <div class="text-file">
+                        <span> &#11088 {{movie.rating}}</span><!--movie  rating -->
+                        <h1>{{movie.name}}</h1><!--movie  name -->
+                        <a href="{{movie.movie_trailer}}"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>  
+
+    <div class="slider-container" id="action">
+        <h3 class="sec-header">أكشن</h3><!--Categorey  name --> 
+        <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="slider">
+            {% for movie in movie|slice:'14:28' %}
+            {% if movie.active %}
+            <div class="card">
+                <a href="{{movie.movie_link}}"><!--movie link from www.wecima.com -->
+
+                    <div class="img-part">
+                        <img src="{{movie.image.url}}" width="100%" height="100%" alt="">
+                    </div>
+                    <div class="text-file">
+                        <span> &#11088 {{movie.rating}}</span><!--movie  rating -->
+                        <h1>{{movie.name}}</h1><!--movie  name -->
+                        <a href="{{movie.movie_trailer}}"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>    
+    <div class="slider-container" id="comedy" >
+        <h3 class="sec-header">رومانسى</h3><!--Categorey  name --> 
+        <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="slider">
+            {% for movie in movie|slice:'28:42' %}
+            {% if movie.active %}
+            <div class="card">
+                <a href="{{movie.movie_link}}"><!--movie link from www.wecima.com -->
+
+                    <div class="img-part">
+                        <img src="{{movie.image.url}}" width="100%" height="100%" alt="">
+                    </div>
+                    <div class="text-file">
+                        <span> &#11088 {{movie.rating}}</span><!--movie  rating -->
+                        <h1>{{movie.name}}</h1><!--movie  name -->
+                        <a href="{{movie.movie_trailer}}"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>    
+
+    <div class="slider-container" id="romantic">
+        <h3 class="sec-header">كوميديا</h3><!--Categorey  name -->
+        <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="slider">
+            {% for movie in movie|slice:'42:56' %}
+            {% if movie.active %}
+            <div class="card">
+                <a href="{{movie.movie_link}}"><!--movie link from www.wecima.com -->
+
+                    <div class="img-part">
+                        <img src="{{movie.image.url}}" width="100%" height="100%" alt="">
+                    </div>
+                    <div class="text-file">
+                        <span> &#11088 {{movie.rating}}</span><!--movie  rating -->
+                        <h1>{{movie.name}}</h1><!--movie  name -->
+                        <a href="{{movie.movie_trailer}}"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>      
+
+
+
+    <div class="slider-container" id="horror">
+        <h3 class="sec-header">رعب</h3><!--Categorey  name -->
+        <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="slider">
+            {% for movie in movie|slice:'56:70' %}
+            {% if movie.active %}
+            <div class="card">
+                <a href="{{movie.movie_link}}"><!--movie link from www.wecima.com -->
+
+                    <div class="img-part">
+                        <img src="{{movie.image.url}}" width="100%" height="100%" alt="">
+                    </div>
+                    <div class="text-file">
+                        <span> &#11088 {{movie.rating}}</span><!--movie  rating -->
+                        <h1>{{movie.name}}</h1><!--movie  name -->
+                        <a href="{{movie.movie_trailer}}"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>      
+
+
+
+
+    <div class="slider-container" id="best">
+        <h3 class="sec-header">أفضل تجميعة</h3><!--Categorey  name -->
+        <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="slider">
+            {% for movie in movie|slice:'10:28'%}
+            {% if movie.active %}
+            <div class="card">
+                <a href="{{movie.movie_link}}"><!--movie link from www.wecima.com -->
+
+                    <div class="img-part">
+                        <img src="{{movie.image.url}}" width="100%" height="100%" alt="">
+                    </div>
+                    <div class="text-file">
+                        <span> &#11088 {{movie.rating}}</span><!--movie  rating -->
+                        <h1>{{movie.name}}</h1><!--movie  name -->
+                        <a href="{{movie.movie_trailer}}"><button class="trailer">Trailer</button></a><!--movie  trailer-->
+
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>      
+</main>
+
+{% endblock content %}

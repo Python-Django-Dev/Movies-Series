@@ -1,0 +1,446 @@
+/* ستايل بيشمل الموقع كامل */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --mainColor: #d58a00;
+    --secondColor: #1a1a1a;
+    --thirdColor: #121212;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: "Tajawal", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    padding: 0;
+    padding-bottom: 30px;
+    margin: 0;
+    background-color: var(--thirdColor);
+    color: #FFFFFF;
+    opacity: 0; /* الصفحة تبدأ مخفية */
+    transform: scale(1.1); /* الصفحة تبدأ بحجم أكبر قليلاً */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* تأثير سلس */
+    /* min-height: 200vh; */
+  }
+  
+  body.loaded {
+    opacity: 1;
+    transform: scale(1); 
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+  
+  .container {
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* الناف بار */
+  header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondColor);
+    z-index: 2;
+    transition: transform 0.4s ease;
+  }
+  
+  header.hidden {
+    transform: translateY(-100%);
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 78px;
+  }
+  
+  header .container::before {
+    content: "";
+    height: 1px;
+    width: calc(100% - 30px);
+    background-color: #a2a2a2;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  header .logo h1 {
+    color: white;
+    margin: 10px 0 10px;
+    font-size: 35px;
+  }
+  
+  header .logo h1 span {
+    background-color: var(--mainColor);
+    padding: 0 8px 0;
+    border-radius: 10px;
+    color: var(--secondColor);
+  }
+  
+  header .container nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  header .container nav input {
+    padding: 15px 20px;
+    width: 350px;
+    color: white;
+    direction: rtl;
+    background-color: #222831;
+    outline: none;
+    border: none;
+    -webkit-box-shadow: inset 3px 10px 49px -33px rgba(20, 21, 33, 1);
+    -moz-box-shadow: inset 3px 10px 49px -33px rgba(20, 21, 33, 1);
+    box-shadow: inset 3px 10px 49px -33px rgba(20, 21, 33, 1);
+    border-radius: 3px;
+  }
+  
+  header .container nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0 0 0 40px;
+    direction: rtl;
+  }
+  
+  header .container nav ul a{
+    display: block;
+    padding: 30px 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    position: relative;
+    font-weight: bold;
+    transition: 0.4s;
+    z-index: 2;
+  }
+  
+  /* header .container nav ul .activ {
+    color: var(--mainColor);
+    border-bottom: 1px solid var(--mainColor);
+  } */
+  
+  header .container nav ul a:hover {
+    color: var(--mainColor);
+    background-color: var(--secondColor);
+    border-bottom: 1px solid var(--mainColor);
+  }
+  
+  header .container nav ul li {
+    position: relative;
+    transition: 0.4s;
+  }
+  
+  
+  /* القائمه الفرعيه */
+  header .container nav ul li ul {
+    display: none;
+    position: absolute;
+    width: 200px;
+    top: 78px;
+    right: 0;
+    background-color: var(--secondColor);
+    padding: 0;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  header .container nav ul li ul li {
+    margin: 0;
+    width: 100%;
+  }
+  
+  header .container nav ul li ul li a {
+    padding: 14px 5px 14px 65px;
+    font-size: 16px;
+    color: white;
+    transition: 0.4s;
+    border-bottom: 1px solid #a2a2a2;
+    direction: rtl;
+  }
+  
+  header .container nav ul li ul li a:hover {
+    color: var(--mainColor);
+    background-color: #222831;
+    padding-right: 10px;
+  }
+  
+  header .container nav ul li:hover ul {
+    display: block;
+  }
+  
+  /* تصميم الايقونات */
+  .dropdown-icon {
+    margin-left: 8px;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+  }
+  
+  nav ul li:hover .dropdown-icon {
+    transform: rotate(180deg);
+  }
+  
+  header .container .signup-btn {
+    position: absolute;
+    color: #FFFFFF;
+    transition: 0.4s;
+    right: -150px;
+    border: 1px solid var(--mainColor);
+    background-color: var(--mainColor);
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  
+  button:active {
+      transform: scale(0.95);
+  }
+  
+  header .container .signup-btn a {
+    color: white;
+    text-decoration: none;
+  }
+  /*================ الحاوية الرئيسيه =====================*/
+  .slider-container-1 {
+    position: relative;
+    width: 100vw;
+    height: 600px; /* ارتفاع السلايدر */
+    overflow: hidden;
+  }
+  
+  /* السلايدر */
+  .slider-1 {
+    display: flex;
+    width: calc(100% * 3); /* اجمالي عرض الصور */
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* حركة سلسة بين الصور */
+  }
+  
+  .slide {
+    flex: 0 0 100%; /* كل صورة بعرض الشاشة */
+    background-color: #000000;
+  }
+  
+  .slide img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  /* أزرار التنقل */
+  button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: rgba(0, 0, 0, 0.472);
+    border: none;
+    border-radius: 50%;
+    color: var(--main);
+    padding: 5px 25px 13px 26px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+  }
+  
+  button.prev {
+    left: 10px;
+  }
+  
+  button.next {
+    right: 10px;
+  }
+  
+  button.prev:hover, button.next:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--mainColor);
+  }
+  
+  /*================ Main Section =====================*/
+  main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  main .slider-container{
+    position: relative;
+    height: 450px;
+    width: 1530px;
+    overflow: hidden;
+    margin-top: 50px;
+    padding-left: 5px;
+  }
+  
+  main .slider-container .sec-header{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: #ffffff;
+    font-size: 23px;
+    margin-top: 0;
+  }
+  
+  main .slider-container .sec-header::before{
+    content: '';
+    position: absolute;
+    right: -20px;
+    height: 100%;
+    width: 4px;
+    background-color: var(--mainColor);
+    margin-right: 10px;
+    border-radius: 10px;
+  }
+  
+  main .slider-container .slider{
+    display: flex;
+    justify-content: space-between;
+    transition: transform 0.5s ease-in-out;
+    gap: 33px;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    flex-direction: row-reverse;
+  }
+  
+  main .slider-container .card{
+    height: 400px;
+    width: 226px;
+    background-color: var(--secondColor);
+    border-radius: 15px 15px 15px 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    position: relative;
+  }
+  
+  main .slider-container .card a{
+    text-decoration: none;
+  }
+  
+  main .slider-container .card img {
+    transition: 0.4s;
+  }
+  
+  main .slider-container .card:hover img{
+    transform: scale(1.09);
+  }
+  
+  main .slider-container .card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  main .slider-container .card .img-part{
+    height: 100%;
+    border: none;
+    display: block;
+  }
+  
+  main .slider-container .card .text-file{
+    color: white;
+    font-size: 9px;
+    height: 35%;
+    width: 100%;
+    padding:15px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    transform: translateY(100%);
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.9556197478991597) 0%, rgba(0,0,0,0.7035189075630253) 46%, rgba(0,0,0,0.3757878151260504) 76%, rgba(0,0,0,0) 100%);
+  }
+  
+  main .slider-container .card:hover .text-file{
+    transform: translateY(0%);
+    
+  }
+  
+  main .slider-container .card .text-file span{
+    font-size: 18px;
+    color: white;
+  }
+  
+  main .slider-container .card .text-file h1{
+    margin-top: 5px;
+    color: white;
+  }
+  
+  main .slider-container .card .text-file a .trailer{
+    background-color: var(--mainColor);
+    height:40px ;
+    width: 180px;
+    font-size: 19px;
+    color: var(--secondColor);
+    border: none;
+    border-radius: 20px;
+    font-weight:bold ;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+  }
+  
+  main .slider-container .card .text-file a .trailer:hover{
+    background-color: var(--secondColor);
+    border: solid var(--mainColor) 1px;
+    color: var(--mainColor);
+    transform: scale(1.02);
+  }
+  
+  main .slider-container .prev-button,.next-button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.372);
+    border: none;
+    border-radius: 20%;
+    color: var(--mainColor);
+    padding: 15px 15px 10px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+  }
+  
+  main .slider-container button:hover{
+    background: rgba(0, 0, 0, 0.738);
+  }
+  
+  .prev-button{
+    left: 10px;
+    z-index: 1;
+  }
+  
+  .next-button{
+    z-index: 1;
+    right: 10px;
+  }
+  
+  
+  
+  

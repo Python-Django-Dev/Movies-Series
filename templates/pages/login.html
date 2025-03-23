@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method = 'POST'>
+        {% csrf_token %}
+        <div> 
+            <label for="name">Name</label>
+            <input type="text" id = 'name' name = 'user_name' maxlength = '20' minlength = '3' value = '{{request.POST.user_name|default:""}}' placeholder = 'example'>
+            {% if errors.user_name %}
+            <p style="color: red;">
+                {{errors.user_name}}
+            </p>
+            {% elif is_in.user_name %}
+            <p style="color: red;">
+                {{is_in.user_name}}
+            </p>
+            {% endif %}
+        </div>
+        <div> 
+            <label for="email">Email</label>
+            <input type="email" id = 'email' name = 'user_email'  value = '{{request.POST.user_email|default:""}}' placeholder = 'example@gmail.com'>
+            {% if errors.user_email %}
+            <p style="color: red;">
+                {{errors.user_email}}
+            </p>
+            {% else %}
+            <p style="color: red;">
+                {{is_in.user_email}}
+            </p>
+            {% endif %}
+        </div>
+        <div> 
+            <label for="password">Password</label>
+            <input type="password" id = 'password' name = 'user_password' maxlength = '20' minlength = '8' value = '{{request.POST.user_password|default:""}}' placeholder = 'example'>
+            {% if errors.user_password %}
+            <p style="color: red;">
+                {{errors.user_password}}
+            </p>
+            {% else %}
+            <p style="color: red;">
+                {{is_in.user_password}}
+            </p>
+            {% endif %}
+        </div>
+        <div> 
+            <label for="age">Age</label>
+            <input type="number" id = 'age' name = 'user_age' minlength = '18' value = '{{request.POST.user_age|default:""}}' placeholder = '20-40'>
+            {% if errors.user_age %}
+            <p style="color: red;">
+                {{errors.user_age}}
+            </p>
+            {% else %}
+            <p style="color: red;">
+                {{is_in.user_age}}
+            </p>
+            {% endif %}
+        </div>
+        <div>
+            <input type="submit" value = 'save'>
+        </div>
+        <!-- <div>
+            {% if valid == False %}
+          <p style="color: red;">
+            {{error}}
+          </p>
+          {% endif %}
+        </div> -->
+    </form>
+</body>
+</html>

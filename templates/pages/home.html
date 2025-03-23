@@ -1,0 +1,951 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/img/Screenshot 2024-12-05 163202.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/homeStyle.css' %}"/>
+    <title>Cima Hub</title>
+  </head>
+  <body>
+    
+    <!-- ================ Header ====================== -->
+    <header id="navbar">
+    <div class="container">
+        <div class="logo">
+            <h1>Cima <span>Club</span></h1>
+        </div>
+        <nav>
+            <input type="text" placeholder="ابحث عن اسم فيلم أو مسلسل...">
+        <ul class="nav-list">
+          <li><a href="{% url 'options' %}" class="activ">الرئيسيه</a></li>
+          <li class="nav-option"><a href="{% url 'movies' %}">الأفلام <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul>
+              <li><a href="#action">أكشن</a></li>
+              <li><a href="#comedy">كوميدي</a></li>
+              <li><a href="#romantic">رومانسى</a></li>
+              <li><a href="#horror">رعب</a></li>
+              <li><a href="#best">افضل تجميعة</a></li>
+            </ul>
+          </li>
+            <li class="nav-option"><a href="{% url 'series' %}">المسلسلات <i class="fas fa-chevron-down dropdown-icon"></i></a>
+              <ul>
+                <li><a href="#fantasy">فانتازيا</a></li>
+                <li><a href="#crime">جريمة</a></li>
+                <li><a href="#comedy">كوميدي</a></li>
+              </ul>
+            </li>
+            <li class="nav-option"><a href="{% url 'anime' %}">انمي & كرتون <i class="fas fa-chevron-down dropdown-icon"></i></a>
+              <ul>
+                <li><a href="#action">اكشن</a></li>
+                <li><a href="#advent">مغامرة</a></li>
+                <li><a href="#comedy">كوميديا</a></li>
+              </ul>
+            </li>
+        </ul>
+        </nav>
+        <button class="signup-btn user-greeting"></button>
+    </div>
+    </header>
+    <main>
+        
+
+<div class="slider-container">
+  <h3 class="sec-header">الاكثر مشاهده</h3>
+  <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+  <div class="slider">
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-game-of-thrones-9/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/gameofthrones.jpg' %}" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.9</span>
+
+                  <h1>Game Of Thrones</h1>
+
+                  <a href="https://youtu.be/KPLWWIOCOOQ"><button class="trailer">Trailer</button></a>
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-breaking-bad-2/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/breaking bad.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.8</span>
+                  <h1>Breaking Bad</h1>
+                  <a href="https://youtu.be/VFkjBy2b50Q"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/the-walking-dead-8/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/The Walking Dead.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9</span>
+                  <h1>The Walking Dead</h1>
+                  <a href="https://youtu.be/sfAc2U20uyg"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-la-casa-de-papel-2/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/la casa de papel.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 8.9</span>
+                  <h1>la casa de papel</h1>
+                  <a href="https://youtu.be/_InqQJRqGW4"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-dark-2/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/dark.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 8.8</span>
+                  <h1>Dark</h1>
+                  <a href="https://youtu.be/ESEUoa-mz2c"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-vikings/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/vikings.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 8.8</span>
+                  <h1>Vikings</h1>
+                  <a href="https://youtu.be/9GgxinPwAGc"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-the-last-of-us-2/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/last of us.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 8.8</span>
+                  <h1>last of us</h1>
+                  <a href="https://www.youtube.com/watch?v=uLtkt8BonwM"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D9%88%D8%B3%D9%85-3-the-boys/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/the boys.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 8.9</span>
+                  <h1>The boys</h1>
+                  <a href="https://www.youtube.com/watch?v=M1bhOaLV4FU"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-the-sopranos/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/sopranos.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.3</span>
+                  <h1>Sopranos</h1>
+                  <a href="https://youtu.be/KMx4iFcozK0"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-penguin/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/penguein.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.4</span>
+                  <h1>Penguein</h1>
+                  <a href="https://youtu.be/sfJG6IiA_s8"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-chernobyl/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/Chernobyl.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.5</span>
+                  <h1>Chernobyl</h1>
+                  <a href="https://youtu.be/s9APLXM9Ei8"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-better-call-saul/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/Best Buy_ Better Call Saul_ Season Two.jpg' %}" width="100%" height="100%"
+                      alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 8.8</span>
+                  <h1>Better Call Saul</h1>
+                  <a href="https://youtu.be/HN4oydykJFc"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-prison-break/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/Prison break.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.1</span>
+                  <h1>Prison break</h1>
+                  <a href="https://youtu.be/AL9zLctDJaU"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-from/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/From.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9</span>
+                  <h1>From</h1>
+                  <a href="https://www.youtube.com/watch?v=jLzj_mgbhJo"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+
+  </div>
+  <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+
+</div>
+<div class="slider-container" id="fantasy"> 
+  <h3 class="sec-header">فانتازيا</h3>
+  <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+  <div class="slider">
+      <div class="card">
+          <a href="https://wecima.movie/series/house-of-the-dragon/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/House Of The Dragon.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9</span>
+                  <h1>House Of The Dragon</h1>
+                  <a href="https://www.youtube.com/watch?v=Wg86eQkdudI&pp=ygUbSG91c2UgT2YgVGhlIERyYWdvbiB0cmFpbGVy"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+   
+      <div class="card">
+          <a href="https://wecima.movie/series/carnival-row/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/carnival_row (series) 8_10.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.8</span>
+                  <h1>Carnival Row</h1>
+                  <a href="https://youtu.be/369LHB9N-Ro"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/the-witcher-1/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/witcher.jfif' %}" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 8.7</span>
+                  <h1>The Witcher</h1>
+                  <a href="https://www.youtube.com/watch?v=ndl1W4ltcmg&pp=ygUTdGhlIHdpdGNoZXIgdHJhaWxlcg%3D%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://zxc10.t2ce2ma.shop/series/the-wheel-of-time/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/The Wheel Of Time.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.8</span>
+                  <h1>The Wheel Of Time</h1>
+                  <a href="https://www.youtube.com/watch?v=11ZozKfRqvA&pp=ygUZdGhlIHdoZWVsIG9mIHRpbWUgdHJhaWxlcg%3D%3D"><button class="trailer">Trailer</button></a>
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D9%88%D8%B3%D9%85-1-his-dark-materials/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/His Dark Materials.jpg' %}" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.9</span>
+                  <h1>His Dark Materials</h1>
+                  <a href="https://www.youtube.com/watch?v=APduGe1eLVI&pp=ygUaaGlzIGRhcmsgbWF0ZXJpYWxzIHRyYWlsZXI%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/a-discovery-of-witches/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/Dicover Of Witches.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.8</span>
+                  <h1>Dicover Of Witches</h1>
+                  <a href="https://www.youtube.com/watch?v=24ijo0mco-0&pp=ygUdZGlzY292ZXJ5IG9mIHdpdGNoZXMgdHJhaWxlciA%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      
+      <div class="card">
+          <a href="https://wecima.movie/series/locke-key/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/Locke & Key.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.8</span>
+                  <h1>Locke & Key</h1>
+                  <a href="https://www.youtube.com/watch?v=_EonRi0yQOE&pp=ygUNbG9ja2UgYW5kIGtleQ%3D%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/the-sandman-2/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/The Sandman.jpg' %}" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.9</span>
+                  <h1>The Sandman</h1>
+                  <a href="https://www.youtube.com/watch?v=Z6pdYkqeT7A&pp=ygULVGhlIFNhbmRtYW4%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-merlin/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/Merlin Series 4 poster.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 6.8</span>
+                  <h1>Merlin</h1>
+                  <a href="https://www.youtube.com/watch?v=01rxgwVmxx0&pp=ygUGTWVybGlu"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-once-upon-a-time-%D9%85%D9%88%D8%B3%D9%85-1/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/ONCE UPON A TIME.jpg' %}" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.5</span>
+                  <h1>Once Ubon A Time</h1>
+                  <a href="https://www.youtube.com/watch?v=Rga4rp4j5TY&pp=ygUQT25jZSBVYm9uIEEgVGltZQ%3D%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.show/watch/%D9%85%D8%B4%D8%A7%D9%87%D8%AF%D8%A9-%D9%85%D8%B3%D9%84%D8%B3%D9%84-the-legend-of-shen-li-%D9%85%D9%88%D8%B3%D9%85-1-%D8%AD%D9%84%D9%82%D8%A9-30/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/Legend of the Seeker - Poster.jpg' %}" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 6.9</span>
+                  <h1>Legend of the Seeker</h1>
+                  <a href="https://www.youtube.com/watch?v=cVKCNmSfayw&pp=ygUUTGVnZW5kIG9mIHRoZSBTZWVrZXI%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/supernatural-6/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/Photoshoot of supernatural.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 8.8</span>
+                  <h1>Supernatural</h1>
+                  <a href="https://www.youtube.com/watch?v=khK3DTyDVfc&pp=ygUUc3VwZXJuYXR1cmFsIHRyYWlsZXI%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/shadow-and-bone/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/Shadow Bone.jpg' %}" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.9</span>
+                  <h1>Shadow Bone</h1>
+                  <a href="https://www.youtube.com/watch?v=0dOmcdz-PN0&pp=ygUTU2hhZG93IEJvbmUgdHJhaWxlcg%3D%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-american-gods-%D9%85%D9%88%D8%B3%D9%85-1/">
+
+              <div class="img-part">
+                  <img src="{% static 'img/American Gods - Season 3.jpg' %}" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 5.1</span>
+                  <h1>American Gods</h1>
+                  <a href="https://youtu.be/z6HLeNl8DOs"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+    
+
+
+
+
+  </div>
+  <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+
+
+</div>
+<div class="slider-container" id="crime">
+  <h3 class="sec-header">الجريمه والغموض</h3>
+  <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+  <div class="slider">
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D9%88%D8%B3%D9%85-1-mindhunter/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/de/ab/24/deab2416998776e5fb591b1bf564698d.jpg" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.9</span>
+                  <h1>Mindhunter</h1>
+                  <a href="https://youtu.be/oFlKiTwhd38"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-sherlock/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/39/c6/bf/39c6bff983453edb70f80d82305110c7.jpg" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 8</span>
+                  <h1>Sherlock</h1>
+                  <a href="https://www.youtube.com/watch?v=9UcR9iKArd0&pp=ygUQc2hlcmxvY2sgdHJhaWxlcg%3D%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-true-detective-%D9%85%D9%88%D8%B3%D9%85-1/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/da/cc/4b/dacc4b220fcf8c9ec56dc2f8e83f0bd4.jpg" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 8.9</span>
+                  <h1>True Deticvtive</h1>
+                  <a href="https://www.youtube.com/watch?v=fVQUcaO4AvE&pp=ygUWdHJ1ZSBkZXRlY3RpdmUgdHJhaWxlcg%3D%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-the-wire-%D9%85%D9%88%D8%B3%D9%85-1/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/24/02/d1/2402d17c9d0876dbc6321f625d0226a7.jpg" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.8</span>
+                  <h1>The Wire</h1>
+                  <a href="https://www.youtube.com/watch?v=1S5khOZ1wBs&pp=ygUQdGhlIHdpcmUgdHJhaWxlcg%3D%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://zxc10.t2ce2ma.shop/series/narcos/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/cd/5b/10/cd5b102d5de58b30d2b7a9c3708d6cfb.jpg" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9</span>
+                  <h1>Narcos</h1>
+                  <a href="https://www.youtube.com/watch?v=xl8zdCY-abw&pp=ygUOTmFyY29zIHRyYWlsZXI%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-dexter-3/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/474x/9f/61/18/9f61186f4d7c2e51c3b3166ff91b0acc.jpg" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.8</span>
+                  <h1>Dexter</h1>
+                  <a href="https://www.youtube.com/watch?v=mzUx1hyL-yk&pp=ygUORGV4dGVyIHRyYWlsZXI%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/fargo-1/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/1d/2c/5c/1d2c5c2a2d61d9c378b89c1b230c295f.jpg" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.9</span>
+                  <h1>Fargo</h1>
+                  <a href="https://www.youtube.com/watch?v=setgvHG3w48&pp=ygUNZmFyZ28gdHJhaWxlcg%3D%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/ozark/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/76/c1/de/76c1de933380670ad1b31cab08e68849.jpg" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 6.9</span>
+                  <h1>Ozark</h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/the-night-of/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/d2/f2/db/d2f2db05681115727ad4e67e9aa9000d.jpg" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.4</span>
+                  <h1>The Night Of</h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://www.tuktukcima.com/%D9%85%D8%B3%D9%84%D8%B3%D9%84-broadchurch-%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85-%D8%A7%D9%84%D8%A7%D9%88%D9%84-%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9-1/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/c2/a4/1a/c2a41a39a98ae53b194235ef1f8e9461.jpg" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 6.8</span>
+                  <h1>Broadchurch</h1>
+                  <a href="https://www.youtube.com/watch?v=HOnus6OvViM&pp=ygUTYnJvYWRjaHVyY2ggdHJhaWxlcg%3D%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/f2/62/53/f26253ed05776d7b32a759b517840900.jpg" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 6.9</span>
+                  <h1>The Sinner</h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/cb/d2/46/cbd24640c800a31270181cf3c8ea4099.jpg" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 .8</span>
+                  <h1>Line of Duty</h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/48/87/3a/48873a9aa22ea1c75c92bfbaa93f34cb.jpg" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 5.9</span>
+                  <h1>Luther</h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="">
+
+              <div class="img-part">
+                  <img src="{% static 'img/breaking bad.jpg' %}" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.8</span>
+                  <h1>Breaking Bad</h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+
+
+
+
+  </div>
+  <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+
+
+</div>
+<div class="slider-container" id="comedy">
+  <h3 class="sec-header">كوميدي</h3>
+  <button class="prev-button" id="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
+  <div class="slider">
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-friends-2/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/ee/6c/2b/ee6c2b7a7f01ffdf1d36e53fa593d8a0.jpg" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9</span>
+                  <h1>Friends</h1>
+                  <a href="https://www.youtube.com/watch?v=PFcCyf39Ozs&pp=ygUPZnJpZW5kcyB0cmFpbGVy"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/watch/%D9%85%D8%B4%D8%A7%D9%87%D8%AF%D8%A9-%D9%85%D8%B3%D9%84%D8%B3%D9%84-the-office-%D9%85%D9%88%D8%B3%D9%85-1-%D8%AD%D9%84%D9%82%D8%A9-1-1/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/22/33/d2/2233d2b89d67883524d32e9d44ef0c6f.jpg" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9</span>
+                  <h1>The Oficce</h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/ted-lasso-2/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/93/c1/76/93c1765200a9d169d3f1d9a73ea075a3.jpg" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 8</span>
+                  <h1>ted lasso</h1>
+                  <a href="https://www.youtube.com/watch?v=3u7EIiohs6U&pp=ygURdGVkIGxhc3NvIHRyYWlsZXI%3D"><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-brooklyn-nine-nine/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/f6/7f/1d/f67f1d7b7ac2417aa4c6fc7385c6acd2.jpg" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 7.8</span>
+                  <h1>Brooklyn Nine-Nine</h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://zxc10.t2ce2ma.shop/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-parks-and-recreation/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/ef/d7/33/efd7336204dd60a9909828cc61fdac1c.jpg" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 6.9</span>
+                  <h1>Parks and Recreation</h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-how-i-met-your-mother-9/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/bf/37/5b/bf375b6e41c1c840bd9627a18435189f.jpg" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 6.8</span>
+                  <h1>How I Met Your Mother
+                  </h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/modern-family-%D9%85%D9%88%D8%B3%D9%85-6-2/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/ac/9b/b9/ac9bb93c3837088c47130bbbecb0e7fe.jpg" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 5.9</span>
+                  <h1>Modern Family</h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="https://wecima.movie/series/%D9%85%D8%B3%D9%84%D8%B3%D9%84-the-big-bang-theory-5/">
+
+              <div class="img-part">
+                  <img src="https://i.pinimg.com/236x/bf/48/67/bf4867b7d8b4e8ce7974b541ae904b5b.jpg" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.8</span>
+                  <h1>The Big Bang Theory</h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="">
+
+              <div class="img-part">
+                  <img src="" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.9</span>
+                  <h1></h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="">
+
+              <div class="img-part">
+                  <img src="" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.8</span>
+                  <h1></h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="">
+
+              <div class="img-part">
+                  <img src="" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.9</span>
+                  <h1></h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="">
+
+              <div class="img-part">
+                  <img src="" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.8</span>
+                  <h1></h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="">
+
+              <div class="img-part">
+                  <img src="" width="100%"
+                      height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.9</span>
+                  <h1></h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+      <div class="card">
+          <a href="">
+
+              <div class="img-part">
+                  <img src="" width="100%" height="100%" alt="">
+              </div>
+              <div class="text-file">
+                  <span> &#11088 9.8</span>
+                  <h1></h1>
+                  <a href=""><button class="trailer">Trailer</button></a>
+
+              </div>
+          </a>
+      </div>
+
+
+
+
+  </div>
+  <button class="next-button" id="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+
+
+</div>
+
+</main>
+
+<script>
+  window.onload = function () {
+      const signupBtn = document.querySelector('.signup-btn');
+      const userName = localStorage.getItem('userName'); 
+
+      if (userName) {
+          signupBtn.textContent = `Hello, ${userName}`;
+          signupBtn.style.pointerEvents = 'none'; 
+      } else {
+          signupBtn.textContent = 'التسجيل';
+          signupBtn.addEventListener('click', function () {
+                    window.location.href = '{% url "loginform" %}'; 
+                });
+      }
+  };
+//   localStorage.clear();
+  window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
+
+</script>
+<script src="{%static 'js/series.js' %}"></script>
+
+</body>
+</html>
